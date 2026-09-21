@@ -44,7 +44,7 @@ func (s *ShopeeCatalogImportService) upsertSnapshot(ctx context.Context,tx pgx.T
  existing,err:=s.listings.FindByExternalIDAndIntegration(ctx,tx,snap.ItemID,integrationID);if err!=nil{return err}
  if existing!=nil{
   status:="inactive";if snap.Status=="NORMAL"{status="active"}
-  meta,_:=json.Marshal(map[string]any{"shop_id":snap.ShopID,"item_id":snap.ItemID})
+  metaBytes,_:=json.Marshal(map[string]any{"shop_id":snap.ShopID,"item_id":snap.ItemID});meta:=json.RawMessage(metaBytes)
   if err:=s.listings.Update(ctx,tx,existing.ID,&model.UpdateProductListingRequest{Status:&status,Metadata:&meta});err!=nil{return err}
   result.Updated++
   return s.upsertExistingMappings(ctx,tx,tenantID,integrationID,existing.ProductID,snap,result)
