@@ -52,7 +52,7 @@ func NewProvider(credentials json.RawMessage, _ json.RawMessage) (*Provider, err
 }
 
 func (p *Provider) ProviderName() string { return "shopee" }
-func (p *Provider) SDKClient() *shopeesdk.Client { return p.client }
+func (p *Provider) SDKClient() *shopeesdk.Client { return p.client }\nfunc (p *Provider) AccessToken() string { return p.creds.AccessToken }\nfunc (p *Provider) ShopID() string { return p.creds.ShopID }
 
 func (p *Provider) ShopInfo(ctx context.Context) (shopeesdk.ShopInfo, error) {
 	return p.client.GetShopInfo(ctx, p.creds.AccessToken, p.creds.ShopID)
