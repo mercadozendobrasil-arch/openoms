@@ -1,0 +1,2 @@
+ALTER TABLE marketplace_order_inventory_events ADD COLUMN IF NOT EXISTS reversed_at timestamptz;
+CREATE INDEX IF NOT EXISTS idx_marketplace_order_inventory_events_order ON marketplace_order_inventory_events(tenant_id,integration_id,external_order_id);
