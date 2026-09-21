@@ -1,0 +1,2 @@
+DROP INDEX IF EXISTS idx_marketplace_order_inventory_events_order;
+ALTER TABLE marketplace_order_inventory_events DROP COLUMN IF EXISTS reversed_at;
