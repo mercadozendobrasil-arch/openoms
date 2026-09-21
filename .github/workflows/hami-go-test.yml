@@ -1,0 +1,21 @@
+name: HAMI Go Test
+on:
+  push:
+    branches: [hami-dev]
+  pull_request:
+    branches: [hami-dev]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: apps/api-server/go.mod
+          cache: true
+      - name: Test Shopee SDK
+        run: go test ./packages/shopee-go-sdk/...
+      - name: Test API server
+        working-directory: apps/api-server
+        run: go test ./internal/integration/shopee/... ./internal/service/... ./internal/repository/...
