@@ -83,10 +83,10 @@ func (r *CreateProductRequest) Validate() error {
 	switch r.Source {
 	case "":
 		r.Source = "manual"
-	case "allegro", "woocommerce", "manual", "supplier", "baselinker":
+	case "allegro", "shopee", "woocommerce", "manual", "supplier", "baselinker":
 		// valid
 	default:
-		return errors.New("source must be one of: allegro, woocommerce, manual, supplier, baselinker")
+		return errors.New("source must be one of: allegro, shopee, woocommerce, manual, supplier, baselinker")
 	}
 	if r.Price < 0 {
 		return errors.New("price must not be negative")
@@ -153,10 +153,10 @@ func (r *UpdateProductRequest) Validate() error {
 	}
 	if r.Source != nil {
 		switch *r.Source {
-		case "allegro", "woocommerce", "manual", "baselinker":
+		case "allegro", "shopee", "woocommerce", "manual", "baselinker":
 			// valid
 		default:
-			return errors.New("source must be one of: allegro, woocommerce, manual, baselinker")
+			return errors.New("source must be one of: allegro, shopee, woocommerce, manual, baselinker")
 		}
 	}
 	if r.Price != nil && *r.Price < 0 {
