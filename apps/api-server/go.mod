@@ -39,6 +39,7 @@ require (
 	github.com/openoms-org/openoms/packages/prestashop-go-sdk v0.0.0-20260213093925-f69d292073cb
 	github.com/openoms-org/openoms/packages/shoper-go-sdk v0.0.0-20260213093925-f69d292073cb
 	github.com/openoms-org/openoms/packages/shopify-go-sdk v0.0.0-20260213093925-f69d292073cb
+	github.com/openoms-org/openoms/packages/shopee-go-sdk v0.0.0-00010101000000-000000000000
 	github.com/openoms-org/openoms/packages/smsapi-go-sdk v0.0.0-20260213093925-f69d292073cb
 	github.com/openoms-org/openoms/packages/ups-go-sdk v0.0.0-20260213093925-f69d292073cb
 	github.com/openoms-org/openoms/packages/wfirma-go-sdk v0.0.0-20260213093925-f69d292073cb
@@ -97,3 +98,5 @@ replace github.com/openoms-org/openoms/packages/shopify-go-sdk => ../../packages
 replace github.com/openoms-org/openoms/packages/btp-go-sdk => ../../packages/btp-go-sdk
 
 replace github.com/openoms-org/openoms/packages/apaczka-go-sdk => ../../packages/apaczka-go-sdk
+
+replace github.com/openoms-org/openoms/packages/shopee-go-sdk => ../../packages/shopee-go-sdk
