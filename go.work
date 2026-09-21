@@ -30,4 +30,5 @@ use (
 	./packages/prestashop-go-sdk
 	./packages/shopify-go-sdk
 	./packages/apaczka-go-sdk
+	./packages/shopee-go-sdk
 )
